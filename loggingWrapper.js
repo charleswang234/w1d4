@@ -12,7 +12,7 @@ var wrapLog = function (callback, name) {
     word += callback.apply(null,arguments);
     console.log(word);
     console.log(arguments);
-  }
+  };
 };
 
 
