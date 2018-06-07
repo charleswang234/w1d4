@@ -1,13 +1,32 @@
 var words = ["ground", "control", "to", "major", "tom"];
 
-map(words, function(word) {
+
+function map(wordArray, fn) {
+  var newWordArray = [];
+  for (var word of wordArray) {
+    console.log(word);
+    newWordArray.push(fn(word));
+  }
+
+  // for (var i =0; i < wordArray.length; ++i) {
+  //   newWordArray.push(fn(wordArray[i]));
+  // }
+  return newWordArray;
+}
+
+
+
+
+console.log(map(words, function(word) {
   return word.length;
-});
+}));
 
-map(words, function(word) {
+console.log(map(words, function(word) {
   return word.toUpperCase();
-});
+}));
 
-map(words, function(word) {
+console.log(map(words, function(word) {
   return word.split('').reverse().join('');
-});
+}));
+
+
